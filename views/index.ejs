@@ -7,36 +7,36 @@
   <head>
   <title>Lab2-Cloud computing - CRUD</title>
 </head>
-<body>
+<body> 
   <div class="container">
     <br>
     <br>
-    <h1 align="left">TABLA DE AGENDA - CRUD</h1>
+    <h1 align="left" style="background-color: aqua;">TABLA DE LIBROS - CRUD</h1>
     <br>
-    <button type="button" class="btn btn-success">INGRESAR NUEVO CONTACTO</button>
+    <a class="btn btn-success" href="/add">Agregar Nuevo Libro</a>
     <br>
     <br>
     <br>
    <table  class="table table-white table-bordered table-striped"> <!--table-dark-->
     <thead align="center">
       <tr>
+        <th>ID</th>
         <th>Nombre</th>
-        <th>Apellido</th>
-        <th>Telefono</th>
-        <th>DNI</th>
+        <th>Autor</th>
+        <th>Precio</th>
         <th style="color: blue;">Operaciones</th>
       </tr>
     </thead>
     <tbody align="center">
       <% data.forEach((row) => { %>
         <tr>
-          <td><%= row.name %></td>
-          <td><%= row.apellido%></td>
-          <td><%= row.numero%></td>
-          <td><%= row.DNI%></td>
+          <td><%= row.id %></td>
+          <td><%= row.nombre%></td>
+          <td><%= row.autor%></td>
+          <td><%= row.precio%></td>
           <td><div class="d-grid gap-2 d-md-block">
-            <button class="btn btn-warning" type="button">EDITAR</button>
-            <button class="btn btn-danger" type="button">ELIMINAR</button>
+          <a class="btn btn-warning" href="/up/<%= row.id %>">EDITAR</a>
+          <a class="btn btn-warning" href="/delete/<%= row.id %>">ELIMINAR</a>
           </div></td>
         </tr>
       <% }); %>
