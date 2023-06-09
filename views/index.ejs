@@ -24,6 +24,7 @@
         <th>Nombre</th>
         <th>Autor</th>
         <th>Precio</th>
+        <th>Imagen</th>        
         <th style="color: blue;">Operaciones</th>
       </tr>
     </thead>
@@ -34,10 +35,13 @@
           <td><%= row.nombre%></td>
           <td><%= row.autor%></td>
           <td><%= row.precio%></td>
-          <td><div class="d-grid gap-2 d-md-block">
-          <a class="btn btn-warning" href="/up/<%= row.id %>">EDITAR</a>
-          <a class="btn btn-warning" href="/delete/<%= row.id %>">ELIMINAR</a>
-          </div></td>
+          <td><img src="<%= row.imagen %>" alt="<%= row.imagen %>" height="250" weight="250"></td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <a class="btn btn-warning" href="/up/<%= row.id %>">EDITAR</a>
+              <a class="btn btn-warning" href="/delete/<%= row.id %>">ELIMINAR</a>
+            </div>
+          </td>
         </tr>
       <% }); %>
     </tbody>
