@@ -33,7 +33,7 @@ app.post('/save', (req, res) => {
   const nombre = req.body.nombre;
   const autor = req.body.autor;
   const precio = req.body.precio;
-  connection.query('INSERT INTO productos SET ?',{nombre:nombre, autor:autor, precio:precio}, (error, results)=>{
+  connection.query('INSERT INTO productos SET ?',{nombre:nombre, autor:autor, precio:precio,imagen: imagenURL}, (error, results)=>{
     if(error){
         console.log(error);
     }else{      
